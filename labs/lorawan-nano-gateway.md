@@ -199,6 +199,13 @@ If you click on the up arrow of one of the message, you will open a panel with d
 
 ## Exercises
 
+Before we can begin collecting and analyzing data from our devices we need to create a the database. But even before that, we need some information from our device including:
+
+Applications --> Choose Device -->  Access Keys': ttn-account-v2.YOUROWNACCESSKEYS
+(copy this somewhere)
+
+![text](images/access_keys.jpeg)
+
 ### Tip 1
 
 The payload received from your device often need to be decoded (from bytes to whatever you want)

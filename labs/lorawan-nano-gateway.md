@@ -219,6 +219,7 @@ https://YOURDEVICEAPPLICATIONID.data.thethingsnetwork.org/swagger.yaml  (in this
 Afterwards, immediately press on "Authorize", and add the "Access Key" that you copied in the first step.  If you're succesful you should be able to see the name of your ID inside the box that's called "Response Body" in the different links for "devices" and "query" (a succesful response code is 200). 
 
 ![text](img/swagger1.jpeg)
+![text](img/success.jpeg)
 
 If something is not working is because you either copied something wrong, or because there are no available getways streaming data (check that indeed you are sending data by following the steps that we did before). Then copy a couple of things that appear within the "query box" and within the curl box (that is inside "query box"):
 

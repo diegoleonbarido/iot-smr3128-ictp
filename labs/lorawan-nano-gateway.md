@@ -201,14 +201,43 @@ If you click on the up arrow of one of the message, you will open a panel with d
 
 Before we can begin collecting and analyzing data from our devices we need to create a the database. But even before that, we need some information from our device including:
 
-Applications --> Choose Device -->  Access Keys': ttn-account-v2.YOUROWNACCESSKEYS
+Applications --> [Click on your Device] -->  'Access Keys' (click to open): ttn-account-v2.YOUROWNACCESSKEYS
 (copy this somewhere)
 
 ![text](img/access_keys.jpeg)
 
+Once you have the access key, and to begin reading data from your sensor node make sure that you've added 'Data Storage' from the Integrations tab in your applications. Within one of your devices, go to the main menu and click on integrations.
+
+![text](img/integrations.jpeg)
+![text](img/integratio_over.jpeg)
+
+For a new node you would create a new data base, or, for an existing database just click on 'go to the platform'.  
+
+![text](img/integration2.jpeg)
+![text](img/integration3.jpeg)
+
+These links should take you to "the swagger website" where you'll add different ids to be able to make some GET requests. To begin add an edited link to the top of the website:
+
+https://YOURDEVICEAPPLICATIONID.data.thethingsnetwork.org/swagger.yaml  (in this case mine reads 10856732, because that's my device application ID, but it will be something different for you)
+
+Afterwards, immediately press on "Authorize", and add the "Access Key" that you copied in the first step.  If you're succesful you should be able to see the name of your ID inside the box that's called "Response Body" in the different links for "devices" and "query" (a succesful response code is 200). 
+
+![text](img/swagger1.jpeg)
+
+If something is not working is because you either copied something wrong, or because there are no available getways streaming data (check that indeed you are sending data by following the steps that we did before). Then copy a couple of things that appear within the "query box" and within the curl box (that is inside "query box"):
+
+https://YOURDEVICEAPPLICATIONID.data.thethingsnetwork.org/api/v2/query
+
+and 
+
+Authorization: key ttn-account-v2.THEKEYTHATAPPEARSINSIDEQUERYBOXANDWITHIN CURL
+
+![text](img/curl.jpeg)
+
+
 ### Tip 1
 
-The payload received from your device often need to be decoded (from bytes to whatever you want)
+After getting this info you should be ready to begin reading the data in python. Before that, however, make sure that the data is readable and decoded (Applications --> CHOOSEyourDEVICE --> Payload Formats, and within there add this snippet and save it (you can test it with one of the id of one of the payload packages you're sending):
 
 ![img/ttn-payload.png](http://i.imgur.com/LUNPjJL.png)
 
@@ -227,7 +256,7 @@ function Decoder(bytes, port) {
 
 ### Tip 2
 
-This is obviously possible to retrieve data sent from your device directly from a Jupyter notebook. The Python snippet code below gives an example.
+After making sure your code works (teste it with a toy payload), go to jupyter and start downloading your data
 
 Copy the following Python snippet code in a Jupyter notebook (with Python kernel 2.7):
 

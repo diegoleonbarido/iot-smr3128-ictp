@@ -221,7 +221,7 @@ Afterwards, immediately press on "Authorize", and add the "Access Key" that you 
 ![text](img/swagger1.jpeg)
 ![text](img/success.jpeg)
 
-If something is not working is because you either copied something wrong, or because there are no available getways streaming data (check that indeed you are sending data by following the steps that we did before). Then copy a couple of things that appear within the "query box" and within the curl box (that is inside "query box"):
+If something is not working it's probably because you either copied something wrong, or because there are no available getways streaming data (check that indeed you are sending data by following the steps that are explained above). Then, copy a couple of things that appear within the "query box" and within the "qurl box" (that is inside "query box"), including the following:
 
 https://YOURDEVICEAPPLICATIONID.data.thethingsnetwork.org/api/v2/query
 
@@ -261,19 +261,17 @@ Copy the following Python snippet code in a Jupyter notebook (with Python kernel
 import pandas as pd
 import requests
 
-url_data_dev = 'https://my-demo-application.data.thethingsnetwork.org/api/v2/query/my-demo-device'
+url_data_dev = 'https://YOURDEVICEAPPLICATIONID.data.thethingsnetwork.org/api/v2/query'
+headers = {'Authorization': 'key ttn-account-v2.HEKEYTHATAPPEARSINSIDE QUERY BOX AND WITHIN CURL'}
 
-headers = {'Authorization': 'your key'}
-
-# Packages the request, send the request and catch the response: r
 r = requests.get(url_data_dev, headers=headers)
 
-# Extract the response: text
 text = r.text
 
 df = pd.read_json(text)
 df = df.set_index(['time'])
 df.head()
+
 ```
 
 ### Challenge

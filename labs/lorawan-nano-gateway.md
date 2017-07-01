@@ -207,14 +207,10 @@ Applications --> [Click on your Device] -->  'Access Keys' (click to open): ttn-
 ![text](img/access_keys.jpeg)
 
 Once you have the access key, and to begin reading data from your sensor node make sure that you've added 'Data Storage' from the Integrations tab in your applications. Within one of your devices, go to the main menu and click on integrations.
+For a new node you would create a new data base, or, for an existing database just click on 'go to the platform'.  
 
 ![text](img/integrations.jpeg)
 ![text](img/integratio_over.jpeg)
-
-For a new node you would create a new data base, or, for an existing database just click on 'go to the platform'.  
-
-![text](img/integration2.jpeg)
-![text](img/integration3.jpeg)
 
 These links should take you to "the swagger website" where you'll add different ids to be able to make some GET requests. To begin add an edited link to the top of the website:
 

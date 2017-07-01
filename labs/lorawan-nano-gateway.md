@@ -204,7 +204,7 @@ Before we can begin collecting and analyzing data from our devices we need to cr
 Applications --> Choose Device -->  Access Keys': ttn-account-v2.YOUROWNACCESSKEYS
 (copy this somewhere)
 
-![text](images/access_keys.jpeg)
+![text](img/access_keys.jpeg)
 
 ### Tip 1
 
